@@ -1,26 +1,32 @@
-#  Как работать с репозиторием финального задания
+# Kittygram
 
-## Что нужно сделать
+**Автор:** Асад Касумов
 
-Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
+## Описание проекта
 
-## Как проверить работу с помощью автотестов
+Kittygram - это бэкенд-приложение для сервиса публикации изображений кошек. Проект создан с использованием Django, Django REST Framework и настроен для запуска в контейнерах с автоматическим тестированием и деплоем с помощью GitHub Actions.
 
-В корне репозитория создайте файл tests.yml со следующим содержимым:
-```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
-```
+## Технологии
 
-Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
+Python
+Django
+Django REST Framework
+PostgreSQL
+Nginx
+Docker
 
-Для локального запуска тестов создайте виртуальное окружение, установите в него зависимости из backend/requirements.txt и запустите в корневой директории проекта `pytest`.
+## Как установить
 
-## Чек-лист для проверки перед отправкой задания
-
-- Проект Taski доступен по доменному имени, указанному в `tests.yml`.
-- Проект Kittygram доступен по доменному имени, указанному в `tests.yml`.
-- Пуш в ветку main запускает тестирование и деплой Kittygram, а после успешного деплоя вам приходит сообщение в телеграм.
-- В корне проекта есть файл `kittygram_workflow.yml`.
+Rлонировать репозиторий:
+git clone https://github.com/yandex-praktikum/kittygram_backend.git
+cd kittygram_backend
+Перейдите в директорию backend:
+cd backend
+Создать и активировать виртуальное окружение:
+python3 -m venv env
+source env/bin/activate  # для Linux/macOS
+env\Scripts\activate  # для Windows
+Установить зависимости:
+pip install -r requirements.txt
+Запустить контейнеры из корневой директории проекта:
+docker-compose up -d
