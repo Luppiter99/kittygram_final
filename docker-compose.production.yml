@@ -20,6 +20,7 @@ services:
   backend:
     image: luppiters/kittygram_backend
     env_file: .env
+    command: ["gunicorn", "--bind", "0.0.0.0:8000", "--timeout", "120", "kittygram_backend.wsgi"]
     volumes:
       - static_volume:/backend_static
       - media_volume:/media

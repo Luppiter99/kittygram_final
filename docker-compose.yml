@@ -10,6 +10,8 @@ services:
     image: postgres:13
     volumes:
       - pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
   backend:
     build: ./backend/
     env_file: .env
