@@ -1,14 +1,13 @@
-import os
-from pathlib import Path
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-
+import os 
+from pathlib import Path 
+ 
+BASE_DIR = Path(__file__).resolve().parent.parent 
+ 
 SECRET_KEY = os.getenv('SECRET_KEY', 'secret')
 
 DEBUG = os.environ.get('DJANGO_DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
-
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost').split(',')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
